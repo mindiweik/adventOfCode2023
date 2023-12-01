@@ -1,0 +1,15 @@
+{
+  "name": "aoc2023",
+  "version": "1.0.0",
+  "description": "Completion of the Advent of Code challenges from 2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "adventofcode",
+    "typescript"
+  ],
+  "author": "Mindi Weik",
+  "license": "ISC"
+}
