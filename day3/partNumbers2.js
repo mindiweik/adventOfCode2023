@@ -1,10 +1,10 @@
 const fs = require('fs')
 
 const input1 = 'input1.txt'
-const input2 = 'input2.txt'
+const input3 = 'input3.txt'
 
 const input1Array = fs.readFileSync(input1, 'utf8', err => console.error(err)).split('\n')
-const input2Array = fs.readFileSync(input2, 'utf8', err => console.error(err)).split('\n')
+const input3Array = fs.readFileSync(input3, 'utf8', err => console.error(err)).split('\n')
 
 const partNumbers = (arr) => {
   const symbolRegex = /[^\w\s.]/
@@ -17,8 +17,13 @@ const partNumbers = (arr) => {
 
       // if a symbol is found, check for nearby numbers
       if (symbol) {
-        const results = checkNearby(arr, row, col)
-        results.forEach(result => sum += result)
+        if (arr[row][col] === '*'){
+          const results = checkNearby(arr, row, col)
+  
+          if (results.length === 2) {
+            sum += (results[0] * results[1])
+          }
+        }
       }
     }
   }
@@ -75,4 +80,4 @@ const checkNearby = (arr, row, col) => {
 }
 
 // console.log(partNumbers(input1Array))
-console.log(partNumbers(input2Array))
+console.log(partNumbers(input3Array))
