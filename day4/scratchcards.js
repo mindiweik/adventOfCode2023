@@ -10,6 +10,7 @@ const scratchCards = (arr) => {
     let points = 0, winners = [], scratch = [], pipeFound = false
     let splitLine = line.split(' ')
 
+    // parse the cards
     splitLine.forEach(el => {
       if (el === '' || el === 'Card' || el.includes(':')) return
       if (el === '|') {
@@ -21,6 +22,7 @@ const scratchCards = (arr) => {
       }
     })
 
+    // count up the points
     scratch.forEach(num => {
       if (winners.includes(num)) {
         points = points === 0 ? 1 : points * 2
